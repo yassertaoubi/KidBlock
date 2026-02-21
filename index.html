@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Extension - Guide d'installation</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --gray-text: #4b5563;
+        }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; color: var(--dark); scroll-behavior: smooth; background: #fff; }
+        
+        /* Header & Hero */
+        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .hero { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: white; padding: 80px 5%; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        
+        /* Buttons */
+        .btn { background: white; color: var(--primary); padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s ease; display: inline-block; border: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .btn-primary { background: var(--primary); color: white; margin-top: 20px; }
+
+        /* General Sections */
+        .section-title { text-align: center; font-size: 2.2rem; margin-top: 60px; margin-bottom: 40px; color: var(--dark); }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Guide Steps */
+        .step { display: flex; align-items: flex-start; margin-bottom: 40px; background: var(--light); padding: 25px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .step-number { background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin-right: 20px; flex-shrink: 0; }
+        .step h3 { margin-top: 0; color: var(--primary); }
+        .step p { color: var(--gray-text); }
+
+        /* Screenshots Carousel */
+        .carousel-container { position: relative; max-width: 800px; margin: 30px auto; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .carousel-slide { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide img { width: 100%; display: block; flex-shrink: 0; border-radius: 12px; }
+        .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; font-size: 1.5rem; border-radius: 5px; }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        /* Video Section */
+        .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ height: 0; overflow: hidden; max-width: 800px; margin: 30px auto; background: var(--dark); border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        /* Notification Banner */
+        #install-banner { display: none; background: #262626; color: white; padding: 15px 20px; position: fixed; bottom: 20px; left: 20px; right: 20px; border-radius: 10px; z-index: 1000; justify-content: space-between; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        #install-banner button { background: none; border: 1px solid white; color: white; padding: 8px 15px; cursor: pointer; border-radius: 5px; transition: 0.3s ease; }
+        #install-banner button:hover { background: white; color: #262626; }
+
+        /* Footer */
+        footer { text-align: center; padding: 40px 20px; margin-top: 60px; background: var(--dark); color: white; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
+            .step { flex-direction: column; text-align: center; }
+            .step-number { margin: 0 auto 15px auto; }
+            #install-banner { flex-direction: column; text-align: center; }
+            #install-banner span { margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <strong>🚀 MyExtension</strong>
+    <nav>
+        <a href="#apercu" class="btn-primary" style="padding: 8px 15px; font-size: 0.9rem; margin-right: 10px;">Aperçu</a>
+        <a href="#guide" class="btn-primary" style="padding: 8px 15px; font-size: 0.9rem; margin-right: 10px;">Guide</a>
+        <a href="#video-install" class="btn-primary" style="padding: 8px 15px; font-size: 0.9rem;">Vidéo</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Améliorez votre navigation en un clic</h1>
+    <p>Téléchargez notre extension Chrome/Firefox pour gagner du temps et simplifier vos tâches quotidiennes.</p>
+    <a href="VOTRE_LIEN_EXTENSION_ICI" class="btn" id="download-btn">Télécharger l'extension MAINTENANT</a>
+</section>
+
+<section class="container" id="apercu">
+    <h2 class="section-title">Aperçu de l'Extension</h2>
+    <p style="text-align: center; color: var(--gray-text); margin-bottom: 40px;">Découvrez l'interface et les fonctionnalités clés de notre extension en images.</p>
+    
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+            <img src="pmer5gk3c5rmw0cwfdnsp4pm08.png" alt="Screenshot 1">
+            <img src="https://via.placeholder.com/800x500?text=Screenshot+2" alt="Screenshot 2">
+            <img src="https://via.placeholder.com/800x500?text=Screenshot+3" alt="Screenshot 3">
+        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+
+<section class="container" id="guide">
+    <h2 class="section-title">Guide d'Installation Étape par Étape</h2>
+    <p style="text-align: center; color: var(--gray-text); margin-bottom: 40px;">Suivez ces quelques étapes simples pour installer et activer votre extension.</p>
+    
+    <div class="step">
+        <div class="step-number">1</div>
+        <div>
+            <h3>Cliquez sur Télécharger</h3>
+            <p>Cliquez sur le bouton bleu <strong>"Télécharger l'extension"</strong> en haut de cette page pour accéder directement au store officiel de votre navigateur (Chrome Web Store, Firefox Add-ons).</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <div>
+            <h3>Ajouter à votre navigateur</h3>
+            <p>Une fois sur la page du store, repérez et cliquez sur le bouton <strong>"Ajouter à Chrome"</strong> ou <strong>"Ajouter à Firefox"</strong>. Confirmez l'ajout lorsque la boîte de dialogue apparaît.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <div>
+            <h3>Épinglez l'icône de l'extension</h3>
+            <p>Après l'installation, cliquez sur l'icône "Puzzle" 🧩 (ou "Extensions") en haut à droite de votre navigateur. Trouvez notre extension et cliquez sur l'icône en forme de "punaise" pour la fixer dans votre barre d'outils, la rendant ainsi toujours accessible.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <div>
+            <h3>Commencez à l'utiliser !</h3>
+            <p>Félicitations ! Votre extension est maintenant installée et prête à l'emploi. Cliquez sur son icône dans votre barre d'outils pour commencer à profiter de toutes ses fonctionnalités.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="video-install">
+    <h2 class="section-title">Vidéo d'Installation</h2>
+    <p style="text-align: center; color: var(--gray-text); margin-bottom: 40px;">Préférez-vous un guide vidéo ? Regardez cette courte démonstration pour une installation pas à pas.</p>
+    
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/VOTRE_ID_VIDEO_YOUTUBE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</section>
+
+<div id="install-banner">
+    <span>Votre navigation est incomplète sans notre extension ! Installez-la maintenant.</span>
+    <button onclick="closeBanner()">Ignorer</button>
+</div>
+
+<footer>
+    <p>&copy; 2023 MyExtension. Tous droits réservés.</p>
+</footer>
+
+<script>
+    // --- Carousel Logic ---
+    let slideIndex = 0;
+    const slides = document.getElementById('carousel-slide');
+    const totalSlides = slides.children.length;
+
+    function showSlides() {
+        slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
+
+    function moveSlide(n) {
+        slideIndex += n;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+            slideIndex = totalSlides - 1;
+        }
+        showSlides();
+    }
+
+    // --- LocalStorage & Banner Logic ---
+    document.addEventListener("DOMContentLoaded", () => {
+        const hasDownloaded = localStorage.getItem('extensionInstalled');
+        const banner = document.getElementById('install-banner');
+
+        if (!hasDownloaded) {
+            setTimeout(() => {
+                banner.style.display = 'flex';
+            }, 2000); // Affiche la bannière après 2 secondes
+        }
+    });
+
+    document.getElementById('download-btn').addEventListener('click', () => {
+        localStorage.setItem('extensionInstalled', 'true'); // Marque comme "téléchargé"
+        document.getElementById('install-banner').style.display = 'none'; // Cache la bannière
+    });
+
+    function closeBanner() {
+        localStorage.setItem('extensionInstalled', 'true'); // Marque comme "vu" pour ne plus l'afficher
+        document.getElementById('install-banner').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
