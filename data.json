@@ -1,1 +1,24 @@
-json
+{
+  "entreprise": "TechNova",
+  "statut": "actif",
+  "employes": [
+    {
+      "id": 1,
+      "nom": "Jean Dupont",
+      "role": "Développeur Fullstack",
+      "competences": ["JavaScript", "Python", "Docker"],
+      "est_disponible": true
+    },
+    {
+      "id": 2,
+      "nom": "Sophie Martin",
+      "role": "Designer UX/UI",
+      "competences": ["Figma", "Adobe XD", "User Research"],
+      "est_disponible": false
+    }
+  ],
+  "metadata": {
+    "derniere_mise_a_jour": "2026-02-21",
+    "version": 1.2
+  }
+}
